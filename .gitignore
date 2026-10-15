@@ -1,0 +1,7 @@
+/target
+*.bin
+.DS_Store
+.env
+.atl/
+odd/
+*.log

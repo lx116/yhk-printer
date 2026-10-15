@@ -1,0 +1,43 @@
+[package]
+name = "yhk-printer"
+version = "0.1.0"
+edition = "2021"
+description = "Open-source CLI, terminal UI and local API for YHK-A32B BLE thermal printers"
+license = "MIT"
+authors = ["Luis Enrique Vélez Santos"]
+repository = "https://github.com/lx116/yhk-printer"
+homepage = "https://github.com/lx116/yhk-printer"
+readme = "README.md"
+keywords = ["thermal-printer", "bluetooth", "ble", "tui", "reverse-engineering"]
+categories = ["command-line-utilities", "hardware-support"]
+publish = false
+include = ["src/**", "assets/fonts/**", "assets/editor/**", "Cargo.toml", "LICENSE", "README.md"]
+
+[lib]
+name = "yhk_printer"
+
+[[bin]]
+name = "yhkp"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+axum = { version = "0.8", features = ["multipart"] }
+btleplug = "0.11"
+clap = { version = "4", features = ["derive"] }
+crossterm = { version = "0.28", features = ["bracketed-paste"] }
+directories = "5"
+fontdue = "0.9"
+futures = "0.3"
+image = "0.25"
+percent-encoding = "2"
+pulldown-cmark = "0.12"
+ratatui = "0.29"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "sync", "fs", "net"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+toml = "0.8"
+tower = "0.5"
+uuid = "1"
